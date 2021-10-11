@@ -158,7 +158,7 @@
               <div class="text-center text-muted mb-4">
                 <small>Or sign in with credentials</small>
               </div>
-              <form role="form" method="post" action="aksiLogin.php">
+              <form role="form" method="post" action="<?= base_url(); ?>login">
                 <div class="form-group mb-3">
                   <div class="input-group input-group-merge input-group-alternative">
                     <div class="input-group-prepend">

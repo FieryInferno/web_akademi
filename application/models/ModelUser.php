@@ -13,4 +13,11 @@ class ModelUser extends CI_Model {
       'created_at'  => date('Y-m-d h:i:s')
     ]);
   }
+
+  public function getByEmail($email)
+  {
+    return $this->db->get_where('user', [
+      'email' => $email
+    ])->row_array();
+  }
 }
