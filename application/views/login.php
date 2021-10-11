@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Start your development with a Dashboard for Bootstrap 4.">
   <meta name="author" content="Creative Tim">
-  <title>Argon Dashboard - Free Dashboard for Bootstrap 4</title>
+  <title>ACompDemy-Login</title>
   <!-- Favicon -->
   <link rel="icon" href="<?= base_url(); ?>asset/assets/img/brand/favicon.png" type="image/png">
   <!-- Fonts -->
@@ -48,13 +48,13 @@
         </div>
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a href="index.php" class="nav-link">
-              <span class="nav-link-inner--text">Dashboard</span>
+            <a href="login.html" class="nav-link">
+              <span class="nav-link-inner--text">Login</span>
             </a>
           </li>
           <li class="nav-item">
-            <a href="login.php" class="nav-link">
-              <span class="nav-link-inner--text">Login</span>
+            <a href="register.php" class="nav-link">
+              <span class="nav-link-inner--text">Register</span>
             </a>
           </li>
         </ul>
@@ -109,7 +109,7 @@
         <div class="header-body text-center mb-7">
           <div class="row justify-content-center">
             <div class="col-xl-5 col-lg-6 col-md-8 px-5">
-              <h1 class="text-white">Create an account</h1>
+              <h1 class="text-white">Welcome!</h1>
               <p class="text-lead text-white">Use these awesome forms to login or create new account in your project for
                 free.</p>
             </div>
@@ -125,14 +125,13 @@
     </div>
     <!-- Page content -->
     <div class="container mt--8 pb-5">
-      <!-- Table -->
       <div class="row justify-content-center">
-        <div class="col-lg-6 col-md-8">
-          <div class="card bg-secondary border-0">
+        <div class="col-lg-5 col-md-7">
+          <div class="card bg-secondary border-0 mb-0">
             <div class="card-header bg-transparent pb-5">
-              <div class="text-muted text-center mt-2 mb-4"><small>Sign up with</small></div>
-              <div class="text-center">
-                <a href="#" class="btn btn-neutral btn-icon mr-4">
+              <div class="text-muted text-center mt-2 mb-3"><small>Sign in with</small></div>
+              <div class="btn-wrapper text-center">
+                <a href="#" class="btn btn-neutral btn-icon">
                   <span class="btn-inner--icon"><img src="<?= base_url(); ?>asset/assets/img/icons/common/github.svg"></span>
                   <span class="btn-inner--text">Github</span>
                 </a>
@@ -141,29 +140,27 @@
                   <span class="btn-inner--text">Google</span>
                 </a>
               </div>
+              <?php
+                if ($this->session->sukses) { ?>
+                  <div class="alert alert-success mt-3" role="alert">
+                    <?= $this->session->sukses; ?>
+                  </div>
+                <?php }
+                
+                if ($this->session->error) { ?>
+                  <div class="alert alert-danger mt-3" role="alert">
+                    <?= $this->session->error; ?>
+                  </div>
+                <?php }
+              ?>
             </div>
             <div class="card-body px-lg-5 py-lg-5">
               <div class="text-center text-muted mb-4">
-                <small>Or sign up with credentials</small>
+                <small>Or sign in with credentials</small>
               </div>
-              <form role="form" method="post" action="<?= base_url(); ?>register">
-                <?php
-                  if ($this->session->error) { ?>
-                    <div class="alert alert-danger" role="alert">
-                      <?= $this->session->error; ?>
-                    </div>
-                  <?php }
-                ?>
-                <div class="form-group">
-                  <div class="input-group input-group-merge input-group-alternative mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
-                    </div>
-                    <input class="form-control" placeholder="Name" type="text" name="nama" required>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="input-group input-group-merge input-group-alternative mb-3">
+              <form role="form" method="post" action="aksiLogin.php">
+                <div class="form-group mb-3">
+                  <div class="input-group input-group-merge input-group-alternative">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                     </div>
@@ -178,22 +175,24 @@
                     <input class="form-control" placeholder="Password" type="password" name="password" required>
                   </div>
                 </div>
-                <div class="text-muted font-italic"><small>password strength: <span
-                      class="text-success font-weight-700">strong</span></small></div>
-                <div class="row my-4">
-                  <div class="col-12">
-                    <div class="custom-control custom-control-alternative custom-checkbox">
-                      <input class="custom-control-input" id="customCheckRegister" type="checkbox">
-                      <label class="custom-control-label" for="customCheckRegister">
-                        <span class="text-muted">I agree with the <a href="#!">Privacy Policy</a></span>
-                      </label>
-                    </div>
-                  </div>
+                <div class="custom-control custom-control-alternative custom-checkbox">
+                  <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
+                  <label class="custom-control-label" for=" customCheckLogin">
+                    <span class="text-muted">Remember me</span>
+                  </label>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary mt-4">Create account</button>
+                  <button type="submit" class="btn btn-primary my-4">Sign in</button>
                 </div>
               </form>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-6">
+              <a href="#" class="text-light"><small>Forgot password?</small></a>
+            </div>
+            <div class="col-6 text-right">
+              <a href="#" class="text-light"><small>Create new account</small></a>
             </div>
           </div>
         </div>
