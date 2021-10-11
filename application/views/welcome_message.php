@@ -50,7 +50,7 @@
                 </li>
               </ul>
             </div>
-            <a href="register.php" class="d-none d-sm-block btn_1 home_page_btn">sign up</a>
+            <a href="<?= base_url(); ?>register" class="d-none d-sm-block btn_1 home_page_btn">sign up</a>
           </nav>
         </div>
       </div>
