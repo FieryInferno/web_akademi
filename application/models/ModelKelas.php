@@ -28,4 +28,15 @@ class ModelKelas extends CI_Model {
 
     return $data;
   }
+
+  public function getByIdKelas($id_kelas)
+  {
+    $data = $this->db->get_where('kelas', ['id' => $id_kelas])->row_array();
+    
+    $materi = $this->db->get_where('materi', ['kelas_id' => $data['id']])->result_array();
+    
+    $data['materi'] = $materi;
+
+    return $data;
+  }
 }
