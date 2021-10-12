@@ -40,7 +40,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="?page=materi">
+              <a class="nav-link" href="<?= base_url(); ?>admin/materi">
                 <i class="ni ni-book-bookmark text-red"></i>
                 <span class="nav-link-text">Materi</span>
               </a>

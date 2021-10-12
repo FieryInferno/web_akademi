@@ -17,4 +17,6 @@ $route['admin/kelas/materi']          = 'Materi';
 $route['admin/kelas/tambah']['get']   = 'Kelas/create';
 $route['admin/kelas/tambah']['post']  = 'Kelas/store';
 
+$route['admin/materi']['get'] = 'Materi/create';
+
 $route['logout']  = 'User/logout';
