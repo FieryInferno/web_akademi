@@ -14,5 +14,6 @@ $route['admin'] = 'Admin';
 
 $route['admin/kelas']         = 'Kelas';
 $route['admin/kelas/materi']  = 'Materi';
+$route['admin/kelas/tambah']  = 'Kelas/create';
 
 $route['logout']  = 'User/logout';

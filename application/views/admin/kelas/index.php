@@ -27,11 +27,14 @@
       <!-- Mask -->
       <span class="mask bg-gradient-default opacity-8"></span>
       <!-- Header container -->
-      <div class="container-fluid d-flex align-items-center">
+      <div class="container-fluid align-items-center">
         <div class="row">
-          <div class="col-lg-12 col-md-10">
+          <div class="col-lg-10 col-md-10">
             <h1 class="display-2 text-white">Hello Admin</h1>
             <p class="text-white mt-0 mb-5">Disini Anda Bisa Melihat Daftar Kelas yang Anda Miliki.</p>
+          </div>
+          <div class="col-lg-2 mt-3">
+            <a class="btn btn-primary" href="<?= base_url(); ?>admin/kelas/tambah">Tambah</a>
           </div>
         </div>
       </div>
