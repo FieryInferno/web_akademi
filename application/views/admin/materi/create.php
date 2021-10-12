@@ -51,16 +51,19 @@
           </div>
           <div class="card-body">
             <?php
-              if (isset($_SESSION['sukses'])) { ?>
+              if ($this->session->sukses) { ?>
                 <div class="alert alert-success">
-                  <?php
-                    echo $_SESSION['sukses'];
-                    unset($_SESSION['sukses']);
-                  ?>
+                  <?= $this->session->sukses; ?>
+                </div>
+              <?php }
+
+              if ($this->session->error) { ?>
+                <div class="alert alert-danger">
+                  <?= $this->session->error; ?>
                 </div>
               <?php }
             ?>
-            <form method="post" action="modul/tambahMateri.php" enctype="multipart/form-data">
+            <form method="post" action="<?= base_url(); ?>admin/materi" enctype="multipart/form-data">
               <h6 class="heading-small text-muted mb-4">Detail</h6>
               <div class="pl-lg-4">
                 <div class="row">
@@ -84,7 +87,7 @@
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-first-name">Kelas</label>
-                      <select class="form-control" name="id_kelas" required>
+                      <select class="form-control" name="kelas" required>
                         <?php
                           foreach ($kelas as $key) { ?>
                             <option value="<?= $key['id']; ?>"><?= $key['nama_kelas']; ?></option>
