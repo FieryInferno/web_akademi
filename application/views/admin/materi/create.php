@@ -84,9 +84,12 @@
                   <div class="col-lg-6">
                     <div class="form-group">
                       <label class="form-control-label" for="input-first-name">Kelas</label>
-                      <select class="form-control" name="kelas" required>
-                        <option value="hardware">Hardware</option>
-                        <option value="jaringan">Jaringan</option>
+                      <select class="form-control" name="id_kelas" required>
+                        <?php
+                          foreach ($kelas as $key) { ?>
+                            <option value="<?= $key['id']; ?>"><?= $key['nama_kelas']; ?></option>
+                          <?php }
+                        ?>
                       </select>
                     </div>
                   </div>
