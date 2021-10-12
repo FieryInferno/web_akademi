@@ -12,4 +12,6 @@ $route['login']['post']     = 'User/authenticate';
 
 $route['admin'] = 'Admin';
 
+$route['admin/kelas'] = 'Kelas';
+
 $route['logout']  = 'User/logout';

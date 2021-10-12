@@ -46,7 +46,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="?page=kelas">
+              <a class="nav-link" href="<?= base_url(); ?>admin/kelas">
                 <i class="ni ni-badge text-red"></i>
                 <span class="nav-link-text">Data Kelas</span>
               </a>
