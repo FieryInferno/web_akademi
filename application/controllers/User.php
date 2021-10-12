@@ -50,7 +50,9 @@ class User extends CI_Controller {
       if ($data) {
         if (password_verify($password, $data['password'])) {
           $this->session->set_flashdata([
-            'id'  => $data['id']
+            'id'    => $data['id'],
+            'nama'  => $data['nama'],
+            'email' => $data['email']
           ]);
 
           switch ($data['level']) {
@@ -76,5 +78,12 @@ class User extends CI_Controller {
       $this->session->set_flashdata('error', validation_errors());
     }
     redirect('login');
+  }
+
+  public function logout()
+  {
+    $this->session->sess_destroy();
+
+    redirect();
   }
 }

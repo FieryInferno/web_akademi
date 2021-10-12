@@ -9,3 +9,7 @@ $route['register']['get']   = 'User/register';
 $route['login']['get']      = 'User/login';
 $route['register']['post']  = 'User/store';
 $route['login']['post']     = 'User/authenticate';
+
+$route['admin'] = 'Admin';
+
+$route['logout']  = 'User/logout';

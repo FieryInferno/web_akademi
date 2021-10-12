@@ -53,7 +53,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="login.php" class="nav-link">
+            <a href="<?= base_url(); ?>login" class="nav-link">
               <span class="nav-link-inner--text">Login</span>
             </a>
           </li>
