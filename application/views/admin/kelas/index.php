@@ -37,6 +37,17 @@
             <a class="btn btn-primary" href="<?= base_url(); ?>admin/kelas/tambah">Tambah</a>
           </div>
         </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <?php
+              if ($this->session->sukses) { ?>
+                <div class="alert alert-success">
+                  <?= $this->session->sukses; ?>
+                </div>
+              <?php }
+            ?>
+          </div>
+        </div>
       </div>
     </div>
     <!-- Page content -->

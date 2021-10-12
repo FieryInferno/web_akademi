@@ -22,4 +22,25 @@ class Kelas extends CI_Controller {
     
 		$this->load->view('admin/template', $data);
   }
+
+  public function store()
+  {
+    $this->form_validation->set_rules('nama_kelas', 'Nama Kelas', 'required');
+    $this->form_validation->set_rules('tingkat_kelas', 'Tingkat Kelas', 'required');
+
+    if ($this->form_validation->run() !== FALSE) {
+      $nama_kelas     = $this->input->post('nama_kelas');
+      $tingkat_kelas  = $this->input->post('tingkat_kelas');
+      
+      $this->ModelKelas->store($nama_kelas, $tingkat_kelas);
+
+      $this->session->set_flashdata('sukses', 'Berhasil tambah kelas');
+
+      redirect('admin/kelas');
+    } else {
+      $this->session->set_flashdata('error', validation_errors());
+
+      redirect($_SERVER['HTTP_REFERER']);
+    }
+  }
 }

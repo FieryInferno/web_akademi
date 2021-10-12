@@ -47,4 +47,12 @@ class ModelKelas extends CI_Model {
 
     return $data;
   }
+
+  public function store($nama_kelas, $tingkat_kelas)
+  {
+    $this->db->insert('kelas', [
+      'nama_kelas'    => $nama_kelas,
+      'tingkat_kelas' => $tingkat_kelas
+    ]);
+  }
 }

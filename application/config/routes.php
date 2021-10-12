@@ -12,8 +12,9 @@ $route['login']['post']     = 'User/authenticate';
 
 $route['admin'] = 'Admin';
 
-$route['admin/kelas']         = 'Kelas';
-$route['admin/kelas/materi']  = 'Materi';
-$route['admin/kelas/tambah']  = 'Kelas/create';
+$route['admin/kelas']                 = 'Kelas';
+$route['admin/kelas/materi']          = 'Materi';
+$route['admin/kelas/tambah']['get']   = 'Kelas/create';
+$route['admin/kelas/tambah']['post']  = 'Kelas/store';
 
 $route['logout']  = 'User/logout';
