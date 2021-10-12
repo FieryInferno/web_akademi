@@ -34,6 +34,14 @@ class ModelKelas extends CI_Model {
     $data = $this->db->get_where('kelas', ['id' => $id_kelas])->row_array();
     
     $materi = $this->db->get_where('materi', ['kelas_id' => $data['id']])->result_array();
+
+    for ($i=0; $i < count($materi); $i++) {
+      $key      = $materi[$i];
+      $progress = $this->db->get_where('progress_siswa', ['materi_id' => $key['id']])->result_array();
+      $total    = $this->db->get_where('materi', ['kelas_id' => $id_kelas])->result_array();
+      
+      $materi[$i]['completion'] = count($progress) / count($total);
+    }
     
     $data['materi'] = $materi;
 
