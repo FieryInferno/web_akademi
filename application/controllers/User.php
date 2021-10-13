@@ -52,7 +52,8 @@ class User extends CI_Controller {
           $this->session->set_flashdata([
             'id'    => $data['id'],
             'nama'  => $data['nama'],
-            'email' => $data['email']
+            'email' => $data['email'],
+            'level' => $data['level']
           ]);
 
           switch ($data['level']) {
