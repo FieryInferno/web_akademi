@@ -65,4 +65,32 @@ class ModelKelas extends CI_Model {
       'tingkat_kelas' => $tingkat_kelas
     ]);
   }
+
+  public function getByIdSiswa($id_siswa)
+  {
+    $this->db->join('kelas', 'kelas_siswa.kelas_id = kelas.id');
+    $data = $this->db->get_where('kelas_siswa', ['siswa_id' => $id_siswa])->result_array();
+
+    for ($i=0; $i < count($data); $i++) {
+      $key    = $data[$i];
+
+      $materi = $this->db->get_where('materi', ['kelas_id' => $key['kelas_id']])->result_array();
+
+      $total_progress = 0;
+      for ($j=0; $j < count($materi); $j++) {
+        $value    = $materi[$j];
+        $progress = $this->db->get_where('progress_siswa', [
+          'materi_id' => $value['id'],
+          'siswa_id'  => $id_siswa
+        ])->num_rows();
+        
+        $total_progress += $progress;
+      }
+      
+      
+      $data[$i]['completion'] = $total_progress / (count($materi) == 0 ? 1 : count($materi)) * 100;
+    }
+
+    return $data;
+  }
 }

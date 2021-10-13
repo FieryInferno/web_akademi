@@ -7,6 +7,9 @@ class Siswa extends CI_Controller {
 	{
     $data['konten'] = 'siswa/index';
     
+    $id_siswa       = $this->session->id;
+    $data['kelas']  = $this->ModelKelas->getByIdSiswa($id_siswa);
+    
 		$this->load->view('siswa/template', $data);
 	}
 }
