@@ -77,44 +77,29 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">
-                  Hardware
-                </th>
-                <td>
-                  1,480
-                </td>
-                <td>
-                  <div class="d-flex align-items-center">
-                    <span class="mr-2">60%</span>
-                    <div>
-                      <div class="progress">
-                        <div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="60"
-                          aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+              <?php
+                foreach ($kelas as $key) { ?>
+                  <tr>
+                    <th scope="row">
+                      <?= $key['nama_kelas']; ?>
+                    </th>
+                    <td>
+                      <?= $key['jumlah_progress']; ?>
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <span class="mr-2"><?= $key['completion']; ?>%</span>
+                        <div>
+                          <div class="progress">
+                            <div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="<?= $key['completion']; ?>"
+                              aria-valuemin="0" aria-valuemax="100" style="width: <?= $key['completion']; ?>%;"></div>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  Network
-                </th>
-                <td>
-                  5,480
-                </td>
-                <td>
-                  <div class="d-flex align-items-center">
-                    <span class="mr-2">70%</span>
-                    <div>
-                      <div class="progress">
-                        <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="70"
-                          aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
-                      </div>
-                    </div>
-                  </div>
-                </td>
-              </tr>
+                    </td>
+                  </tr>
+                <?php }
+              ?>
             </tbody>
           </table>
         </div>

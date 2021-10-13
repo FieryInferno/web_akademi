@@ -34,7 +34,7 @@
           <!-- Nav items -->
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="?page=dashboard">
+              <a class="nav-link" href="<?= base_url(); ?>admin">
                 <i class="ni ni-single-02 text-red"></i>
                 <span class="nav-link-text">Profil</span>
               </a>
