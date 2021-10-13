@@ -43,4 +43,11 @@ class Kelas extends CI_Controller {
       redirect($_SERVER['HTTP_REFERER']);
     }
   }
+
+  public function siswa()
+  {
+    $data['konten'] = 'siswa/kelas/index';
+    
+		$this->load->view('siswa/template', $data);
+  }
 }

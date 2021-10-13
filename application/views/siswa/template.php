@@ -43,7 +43,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="?page=kelas">
+              <a class="nav-link" href="<?= base_url(); ?>siswa/kelas">
                 <i class="ni ni-book-bookmark text-purple"></i>
                 <span class="nav-link-text">Class</span>
               </a>
