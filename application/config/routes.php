@@ -20,4 +20,6 @@ $route['admin/kelas/tambah']['post']  = 'Kelas/store';
 $route['admin/materi']['get']   = 'Materi/create';
 $route['admin/materi']['post']  = 'Materi/store';
 
+$route['siswa'] = 'Siswa';
+
 $route['logout']  = 'User/logout';
