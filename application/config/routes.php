@@ -22,6 +22,7 @@ $route['admin/materi']['post']  = 'Materi/store';
 
 $route['siswa'] = 'Siswa';
 
-$route['siswa/kelas'] = 'Kelas/siswa';
+$route['siswa/kelas']         = 'Kelas/siswa';
+$route['siswa/kelas/(:any)']  = 'Kelas/showSiswa/$1';
 
 $route['logout']  = 'User/logout';

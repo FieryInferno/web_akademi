@@ -15,4 +15,10 @@ class ModelMateri extends CI_Model {
       'created_at'    => date('Y-m-d h:i:s')
     ]);
   }
+
+  public function getByIdKelas($id_kelas)
+  {
+    $this->db->join('kelas', 'materi.kelas_id = kelas.id');
+    return $this->db->get_where('materi', ['kelas_id' => $id_kelas])->result_array();
+  }
 }

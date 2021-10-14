@@ -93,4 +93,9 @@ class ModelKelas extends CI_Model {
 
     return $data;
   }
+
+  public function getByTingkat($tingkat)
+  {
+    return $this->db->get_where('kelas', ['tingkat_kelas' => $tingkat])->result_array();
+  }
 }

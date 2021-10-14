@@ -23,30 +23,22 @@
   <!-- Page content -->
   <div class="container-fluid mt-3">
     <div class="row pl-4 pr-4">
-      <div class=" col-lg-6">
-        <div class="card bg-gradient-gray">
-          <div class="btn dt-button-background">
-            <a href="?page=kelas&jenis=hardware">
-              <div class="card-header bg-gradient-gray border-3">
-                <div class="fa fa-7x fa-laptop mb-4" style="color:rgb(255, 255, 255)"></div>
-                <h1 class="mb--1 text-center text-white">Hardware</h1>
+      <?php
+        foreach ($dasar as $key) { ?>
+          <div class=" col-lg-6">
+            <div class="card bg-gradient-gray">
+              <div class="btn dt-button-background">
+                <a href="<?= base_url('siswa/kelas/' . $key['id']); ?>">
+                  <div class="card-header bg-gradient-gray border-3">
+                    <div class="fa fa-7x fa-laptop mb-4" style="color:rgb(255, 255, 255)"></div>
+                    <h1 class="mb--1 text-center text-white"><?= $key['nama_kelas']; ?></h1>
+                  </div>
+                </a>
               </div>
-            </a>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class=" col-lg-6 ">
-        <div class="card bg-gradient-gray">
-          <div class="btn dt-button-background">
-            <a href="?page=kelas&jenis=network">
-              <div class="card-header bg-gradient-gray border-3">
-                <div class="fa fa-7x fa-satellite-dish mb-4" style="color:rgb(255, 255, 255)"></div>
-                <h1 class="mb--1 text-center text-white">Jaringan</h1>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
+        <?php }
+      ?>
     </div>
   </div>
   <h1 class="text-xl-left mt-4 pl-4">KELAS LANJUTAN</h1>
