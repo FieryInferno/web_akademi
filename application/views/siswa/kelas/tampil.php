@@ -68,7 +68,7 @@
                         <?= $key['keterangan']; ?>
                       </td>
                       <td>
-                        <a href="#" class="btn btn-sm btn-twitter">Start</a>
+                        <a href="<?= base_url('siswa/kelas/' . $this->uri->segment(3) . '/' . $key['id']); ?>" class="btn btn-sm btn-twitter">Start</a>
                       </td>
                     </tr>
                   <?php }

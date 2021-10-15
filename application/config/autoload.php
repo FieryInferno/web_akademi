@@ -7,4 +7,4 @@ $autoload['drivers']    = array();
 $autoload['helper']     = array('url', 'web_helper');
 $autoload['config']     = array();
 $autoload['language']   = array();
-$autoload['model']      = array('ModelUser', 'ModelKelas', 'ModelMateri');
+$autoload['model']      = array('ModelUser', 'ModelKelas', 'ModelMateri', 'ModelProgress');

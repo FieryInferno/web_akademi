@@ -54,6 +54,18 @@ class Kelas extends CI_Controller {
 
   public function showSiswa($id_kelas)
   {
+    if ($this->input->get()) {
+      $id_siswa = $this->session->id;
+      $progress = $this->db->get_where('progress_siswa', [
+        'siswa_id'  => $id_siswa,
+        'materi_id' => $this->input->get('id')
+      ])->row_array();
+
+      if (!$progress) {
+        $this->ModelProgress->store($id_siswa, $this->input->get('id'));
+      }
+    }
+
     $data['konten'] = 'siswa/kelas/tampil';
     $data['materi'] = $this->ModelMateri->getByIdKelas($id_kelas);
     

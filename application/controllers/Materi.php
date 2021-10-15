@@ -64,4 +64,33 @@ class Materi extends CI_Controller {
       return $this->upload->file_name;
     }
   }
+
+  public function show($id_kelas, $id_materi)
+  {
+    if ($this->input->get()) {
+      $id_siswa = $this->session->id;
+      $progress = $this->db->get_where('progress_siswa', [
+        'siswa_id'  => $id_siswa,
+        'materi_id' => $this->input->get('id')
+      ])->row_array();
+
+      if ($progress == NULL) {
+        $this->ModelProgress->store($id_siswa, $this->input->get('id'));
+      }
+    }
+
+    $data   = $this->ModelMateri->getByIdMateri($id_materi);
+    $materi = $this->db->get_where('materi', ['kelas_id' => $id_kelas])->result_array();
+    $next   = array_search($id_materi, array_column($materi, 'id')) + 1;
+    if ($next == count($materi)) {
+      $data['next'] = NULL;
+    } else {
+      $data['next'] = $materi[$next]['id'];
+    }
+    
+    $data['id_kelas'] = $id_kelas;
+    $data['konten']   = 'siswa/materi/index';
+    
+		$this->load->view('siswa/template', $data);
+  }
 }
