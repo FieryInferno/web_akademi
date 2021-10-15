@@ -49,7 +49,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="?page=sertifikat">
+              <a class="nav-link" href="<?= base_url(); ?>siswa/sertifikat">
                 <i class="ni ni-badge text-purple"></i>
                 <span class="nav-link-text">Sertificate</span>
               </a>

@@ -26,4 +26,6 @@ $route['siswa/kelas']               = 'Kelas/siswa';
 $route['siswa/kelas/(:any)']        = 'Kelas/showSiswa/$1';
 $route['siswa/kelas/(:any)/(:any)'] = 'Materi/show/$1/$2';
 
+$route['siswa/sertifikat']  = 'Sertifikat';
+
 $route['logout']  = 'User/logout';

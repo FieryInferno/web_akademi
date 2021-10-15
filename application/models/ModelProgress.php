@@ -11,4 +11,12 @@ class ModelProgress extends CI_Model {
       'created_at'    => date('Y-m-d h:i:s')
     ]);
   }
+
+  public function getByKelasSiswa($id_kelas, $id_siswa)
+  {
+    $this->db->join('materi', 'progress_siswa.materi_id = materi.id');
+    return $this->db->get_where('progress_siswa', [
+      'siswa_id'        => $id_siswa
+    ])->result_array();
+  }
 }
