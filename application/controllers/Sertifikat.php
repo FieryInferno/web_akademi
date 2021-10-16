@@ -26,4 +26,11 @@ class Sertifikat extends CI_Controller {
     
 		$this->load->view('siswa/template', $data);
 	}
+
+  public function print()
+  {
+    $data = $this->ModelKelas->getByIdKelas($this->input->get('kelas'));
+    
+		$this->load->view('siswa/sertifikat/cetak', $data);
+  }
 }

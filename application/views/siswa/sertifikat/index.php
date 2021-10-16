@@ -45,7 +45,7 @@
                 </div>
               </div>
               <div class="col-lg-12 col-0 text-center mt-1 ">
-                <a href="<?= base_url('siswa/sertifikat/cetak?kelas=' . $this->input->get('kelas')); ?>" class="btn btn-lg btn-twitter">Cetak</a>
+                <a href="<?= base_url('siswa/sertifikat/cetak?kelas=' . $this->input->get('kelas')); ?>" class="btn btn-lg btn-twitter" target="_blank">Cetak</a>
               </div>
             <?php } else { ?>
               <form action="<?= base_url(); ?>siswa/sertifikat" method="get">
