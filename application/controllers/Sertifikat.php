@@ -5,7 +5,9 @@ class Sertifikat extends CI_Controller {
 
 	public function index()
 	{
-    $data['konten'] = 'siswa/sertifikat/index';
+    if ($this->input->get()) {
+      $data = $this->ModelKelas->getByIdKelas($this->input->get('kelas'));
+    }
 
     $id_siswa     = $this->session->id;
     $kelas_siswa  = $this->ModelKelas->getByIdSiswa($id_siswa);
@@ -19,6 +21,8 @@ class Sertifikat extends CI_Controller {
         $data['kelas'][$i]  = $key;
       }
     }
+
+    $data['konten'] = 'siswa/sertifikat/index';
     
 		$this->load->view('siswa/template', $data);
 	}

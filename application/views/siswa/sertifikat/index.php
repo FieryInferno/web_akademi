@@ -36,21 +36,33 @@
     <div class="row">
       <div class="col">
         <div class="card border-0 bg-white">
-          <form action="<?= base_url(); ?>sertifikat" method="get">
-            <div class="form-group">
-              <label class="form-control-label" for="input-email">Kelas</label>
-              <select class="form-control" name="kelas" required>
-                <?php
-                  foreach ($kelas as $key) { ?>
-                    <option value="<?= $key['kelas_id']; ?>"><?= $key['nama_kelas']; ?></option>
-                  <?php }
-                ?>
-              </select>
-            </div>
-          </form>
-          <!-- <div class="col-lg-12 col-0 text-center mt-1 ">
-            <a href="#" class="btn btn-lg btn-twitter">Cetak</a>
-          </div> -->
+          <?php
+            if ($this->input->get()) { ?>
+              <div style="background-image: url('http://localhost/web_akademi/asset/img/sertifikat.jpeg');height: 50rem;width: 70rem;background-size: cover;background-repeat: no-repeat;">
+                <div style="margin-top: 25rem;" class="text-center">
+                  <h1><?= $this->session->nama; ?></h1>
+                  <h1><?= $nama_kelas; ?></h1>
+                </div>
+              </div>
+              <div class="col-lg-12 col-0 text-center mt-1 ">
+                <a href="<?= base_url('siswa/sertifikat/cetak?kelas=' . $this->input->get('kelas')); ?>" class="btn btn-lg btn-twitter">Cetak</a>
+              </div>
+            <?php } else { ?>
+              <form action="<?= base_url(); ?>siswa/sertifikat" method="get">
+                <div class="form-group">
+                  <label class="form-control-label" for="input-email">Kelas</label>
+                  <select class="form-control" name="kelas" required>
+                    <?php
+                      foreach ($kelas as $key) { ?>
+                        <option value="<?= $key['kelas_id']; ?>"><?= $key['nama_kelas']; ?></option>
+                      <?php }
+                    ?>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Lihat</button>
+              </form>
+            <?php }
+          ?>
         </div>
       </div>
     </div>
