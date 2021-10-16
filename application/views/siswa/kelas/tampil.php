@@ -38,7 +38,7 @@
       <div class="col">
         <div class="card bg-default shadow">
           <div class="card-header bg-transparent border-0">
-            <h1 class="text-white mb-0"><?= $materi[0]['nama_kelas']; ?> Class</h1>
+            <h1 class="text-white mb-0"><?= $kelas['nama_kelas']; ?> Class</h1>
           </div>
           <div class="table-responsive">
             <table class="table align-items-center table-dark table-flush">
