@@ -55,7 +55,7 @@
               </a>
             </li>
             <li>
-              <a class="nav-link" href="<?= base_url(); ?>asset/aksiLogout.php">
+              <a class="nav-link" href="<?= base_url(); ?>logout">
                 <i class="ni ni-user-run text-purple"></i>
                 <span class="nav-link-text">Logout</span>
               </a>
