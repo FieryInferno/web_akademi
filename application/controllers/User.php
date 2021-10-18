@@ -49,7 +49,7 @@ class User extends CI_Controller {
 
       if ($data) {
         if (password_verify($password, $data['password'])) {
-          $this->session->set_flashdata([
+          $this->session->set_userdata([
             'id'    => $data['id'],
             'nama'  => $data['nama'],
             'email' => $data['email'],
