@@ -19,6 +19,7 @@ class ModelMateri extends CI_Model {
   public function getByIdKelas($id_kelas)
   {
     $this->db->join('kelas', 'materi.kelas_id = kelas.id');
+    $this->db->select('materi.id as id_materi, judul_materi, keterangan, kelas_id, isi_materi');
     return $this->db->get_where('materi', ['kelas_id' => $id_kelas])->result_array();
   }
 
