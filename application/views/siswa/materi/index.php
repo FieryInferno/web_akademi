@@ -42,6 +42,7 @@
           </div>
           <div class="card-body">
             <?= $isi_materi; ?>
+            <iframe src="<?= base_url('asset/' . $file); ?>" width="100%" height="500px"></iframe>
           </div>
           <div class="card-footer">
             <?php
