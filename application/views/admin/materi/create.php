@@ -101,7 +101,6 @@
                       <label class="form-control-label" for="input-last-name">Tingkat</label>
                       <select class="form-control" name="tingkat" required>
                         <option value="dasar">Dasar</option>
-                        <option value="lanjut">Lanjut</option>
                       </select>
                     </div>
                   </div>

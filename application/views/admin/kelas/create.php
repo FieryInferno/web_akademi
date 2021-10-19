@@ -71,7 +71,6 @@
                       <label class="form-control-label" for="input-email">Tingkat Kelas</label>
                       <select class="form-control" name="tingkat_kelas" required>
                         <option value="dasar">Dasar</option>
-                        <option value="lanjutan">Lanjutan</option>
                       </select>
                     </div>
                   </div>
