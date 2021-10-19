@@ -38,7 +38,7 @@
         <div class="card border-0 bg-white">
           <?php
             if ($this->input->get()) { ?>
-              <div style="background-image: url('http://localhost/web_akademi/asset/img/sertifikat.jpeg');height: 50rem;width: 70rem;background-size: cover;background-repeat: no-repeat;">
+              <div style="background-image: url('<?= base_url(); ?>asset/img/sertifikat.jpeg');height: 50rem;width: 70rem;background-size: cover;background-repeat: no-repeat;">
                 <div style="margin-top: 25rem;" class="text-center">
                   <h1><?= $this->session->nama; ?></h1>
                   <h1><?= $nama_kelas; ?></h1>
