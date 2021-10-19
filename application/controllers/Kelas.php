@@ -46,8 +46,9 @@ class Kelas extends CI_Controller {
 
   public function siswa()
   {
-    $data['konten'] = 'siswa/kelas/index';
-    $data['dasar']  = $this->ModelKelas->getByTingkat('dasar');
+    $data['konten']   = 'siswa/kelas/index';
+    $data['dasar']    = $this->ModelKelas->getByTingkat('dasar');
+    $data['lanjutan'] = $this->ModelKelas->getByTingkat('lanjutan');
     
 		$this->load->view('siswa/template', $data);
   }
