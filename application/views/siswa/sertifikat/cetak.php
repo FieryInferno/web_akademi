@@ -11,7 +11,7 @@
   <link rel="icon" href="<?= base_url(); ?>asset/img/acompdemy4.png" type="image/png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
-<body style="background-image: url('http://localhost/web_akademi/asset/img/sertifikat.jpeg');background-repeat: no-repeat;">
+<body style="background-image: url('<?= base_url(); ?>asset/img/sertifikat.jpeg');background-repeat: no-repeat;">
   <div class="text-center" style="margin-top: 29rem;">
     <h1><?= $this->session->nama; ?></h1>
     <h1><?= $nama_kelas; ?></h1>
