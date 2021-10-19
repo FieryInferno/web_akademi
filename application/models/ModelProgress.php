@@ -16,7 +16,8 @@ class ModelProgress extends CI_Model {
   {
     $this->db->join('materi', 'progress_siswa.materi_id = materi.id');
     return $this->db->get_where('progress_siswa', [
-      'siswa_id'        => $id_siswa
+      'siswa_id'        => $id_siswa,
+      'materi.kelas_id' => $id_kelas     
     ])->result_array();
   }
 }
